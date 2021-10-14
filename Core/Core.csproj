@@ -7,7 +7,7 @@
   <ItemGroup>
     <Folder Include="DtoIn\" />
     <Folder Include="DtoOut\" />
-    <Folder Include="DbModels\" />
+    <Folder Include="DbModel\" />
   </ItemGroup>
 
 </Project>

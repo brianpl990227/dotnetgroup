@@ -5,7 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="DtoIn\" />
     <Folder Include="DtoOut\" />
     <Folder Include="DbModel\" />
   </ItemGroup>

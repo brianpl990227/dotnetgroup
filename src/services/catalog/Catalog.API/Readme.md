@@ -45,3 +45,19 @@ A partir de este momento ya tenemos instalado mongo y podemos conectarnos a la b
 
 ![image](https://user-images.githubusercontent.com/11778651/137432285-46d3b7b3-a6a4-4370-ac7d-af7450c5fc47.png) Atención: Esta base es temporal para poder desarrollar 
 y probar momentaneamente fuera de docker, de a poco el microservicio se ira adaptando para que se pueda ejecutar dentro y fuera del contenedor junto con la base de datos.
+
+### Crear Catalog.API
+---
+- Para estructurar mejor la solucion cree las carpetas src/services/catalog para ubicar el microservicio Catalog.API
+![image](https://user-images.githubusercontent.com/11778651/137435576-88d597dc-67cd-4dcb-b670-7abeecf18ecb.png)
+- Creo un proyecto ASP.NET Core Web API siguiendo las siguientes instrucciones
+![image](https://user-images.githubusercontent.com/11778651/137435707-1bed7f57-0fd3-4b53-b9d4-79ddf3de6105.png)   
+![image](https://user-images.githubusercontent.com/11778651/137435658-c5353d83-6d81-49be-a289-5c432f9eb3c1.png)   
+![image](https://user-images.githubusercontent.com/11778651/137435759-856310c9-0f35-4356-b451-d5f1a57087fa.png)   
+- En este paso asegurarse en Location de agregar src\services\catalog, si no lo hace el proyecto no mantendra la estructura por fuera de la solucion.   
+![image](https://user-images.githubusercontent.com/11778651/137435784-b22592a4-f985-4c83-b6ab-254b32f7890a.png)   
+![image](https://user-images.githubusercontent.com/11778651/137435935-99e52b5f-6f2d-4312-869a-e895829c7a35.png)   
+- Por ultimo eliminar el controlador y entidad por defecto   
+![image](https://user-images.githubusercontent.com/11778651/137436022-8af922f1-6fc4-48fc-9a24-18e246a1e127.png)
+
+

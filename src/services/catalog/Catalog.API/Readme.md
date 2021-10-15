@@ -1,5 +1,5 @@
 ## Microservicio Catalog.API
-![image](https://user-images.githubusercontent.com/11778651/137434677-7aaa8744-a9b9-43d0-b5b5-7038f0211ac3.png)
+![image](https://user-images.githubusercontent.com/11778651/137435235-fd9ddb97-7bd6-4323-8972-70635ffba0cd.png)
 
 ### Objetivo
 ---

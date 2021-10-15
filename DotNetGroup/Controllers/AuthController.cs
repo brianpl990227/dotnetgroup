@@ -21,7 +21,7 @@ namespace DotNetGroup.Controllers
         }
 
         [HttpPost("login")]
-        public IActionResult Login(LoginDto loginDtoIn)
+        public ActionResult<string> Login(LoginDto loginDtoIn)
         {
             string token = loginService.SignIn(loginDtoIn);
 

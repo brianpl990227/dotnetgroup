@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetGroup", "DotNetGroup\DotNetGroup.csproj", "{88310570-93DF-40BB-90CA-AB0D869A3990}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "Core\Core.csproj", "{B99374DE-2D53-4337-B564-CD4CC1A9F570}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Core\Domain.csproj", "{B99374DE-2D53-4337-B564-CD4CC1A9F570}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infraestructure", "Infraestructure\Infraestructure.csproj", "{73E7CCA1-0DB3-4012-A578-82720F105CBB}"
 EndProject

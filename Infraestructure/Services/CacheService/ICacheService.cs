@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Core.DtoOut
+namespace Infraestructure.Services.CacheService
 {
-    public class LoginResponse
+    public interface ICacheService
     {
-        public string Token { get; set; }
+        bool CountLoginFailed(string email);
     }
 }

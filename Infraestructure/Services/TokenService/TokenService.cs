@@ -16,11 +16,14 @@ namespace Infraestructure.Services.TokenService
 
         public TokenService(IConfiguration config)
         {
+            //Inyecto ICOnfiguration para poder acceder al appseting.json y obtener el key posteriormente
             configuration = config;
         }
         public string BuildToken(string email)
         {
    
+            //Creo los claims con los que voy a contruir mi token
+            //Un claim se compone por <propiedad, valor> como puedes ver a continuación
             var claims = new[]
             {
                 new Claim("id", Guid.NewGuid().ToString()),
@@ -28,11 +31,15 @@ namespace Infraestructure.Services.TokenService
 
             };
 
+            //Creo la llave de seguridad obteniendola del appsettings.json
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration.GetSection("Key").Value));
+            //Digo con que algoritmo de encriptamiento voy a encriptar la llave de seguridad
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
+            //Digo cuando va a expirar el token, esto no es obligatorio
             var expiration = DateTime.UtcNow.AddYears(1);
 
+            //Conformo mi token
             JwtSecurityToken token = new JwtSecurityToken(
                 issuer: "dotnetgroup",
                 audience: "dotnetgroup",
@@ -40,6 +47,7 @@ namespace Infraestructure.Services.TokenService
                 expires: expiration,
                 signingCredentials: creds);
 
+            //Escribo mi token, Esto devuelve un string largo y raro encriptado
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
     }

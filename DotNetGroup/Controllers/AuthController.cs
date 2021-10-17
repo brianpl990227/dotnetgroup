@@ -50,9 +50,10 @@ namespace DotNetGroup.Controllers
                 }
                 else
                 {
+                    //Si el intento de login fue fallido, cuento un intento fallido
                     if(cache.CountLoginFailed(loginDtoIn.Email))
                     {
-                        //Bloquear cuenta aqui
+                        //Bloquear cuenta aqui, tengo que crear UserService para eso
                     }
                     return BadRequest();
                 }

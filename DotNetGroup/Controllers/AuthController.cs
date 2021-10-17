@@ -8,6 +8,7 @@ using Domain.DtoIn;
 using Infraestructure.Services.LoginService;
 using Microsoft.Extensions.Caching.Memory;
 using Infraestructure.Services.CacheService;
+using Infraestructure.Services.UserService;
 
 namespace DotNetGroup.Controllers
 {
@@ -17,19 +18,20 @@ namespace DotNetGroup.Controllers
     {
         private readonly ILoginService loginService;
         private readonly ICacheService cache;
+        private readonly IUserService userService;
 
-        public AuthController(ILoginService _loginService, ICacheService _cache)
+        public AuthController(ILoginService _loginService, ICacheService _cache, IUserService _userService)
         {
-            //Proveo una instancia de LoginService mendiante una inyección de dependencia
+            //Proveo una instancias mendiante una inyecciones de dependencia
             loginService = _loginService;
-
+            userService = _userService;
             cache = _cache;
         }
 
         /**
          * Endpoint para hacer login en el sistema
          * @param {string} LoginDto.Email - Es el Email que ingreso
-         * @param {string} Login.Password - Contraseña con la que el usuario va a hacer login
+         * @param {string} LoginDto.Password - Contraseña con la que el usuario va a hacer login
          * @return {string} token - Token de autenticación del usuario, es un Jwt (Json Web Token)
          **/
         [HttpPost]
@@ -37,25 +39,30 @@ namespace DotNetGroup.Controllers
         {
             try
             {
-                //Tengo que comprobar si el Email esta bloqueado primero <-------------------
+                bool blocked = userService.isItBlocked(loginDtoIn.Email);
+                if (blocked)
+                {
+                    return Unauthorized();
+                }
 
                 //Se llama al servicio de login y se espera un valor de tipo string
                 string token = loginService.SignIn(loginDtoIn);
 
                 //Si tengo un token HTTPStatusCode = 200
-                //Si no tengo un token HTTPStatusCode = 400
-                if (token != null)
+                if(token != null)
                 {
                     return Ok(token);
                 }
                 else
                 {
-                    //Si el intento de login fue fallido, cuento un intento fallido
+                    //Si el intento de login fue fallido (no tengo token), cuento un intento fallido
+                    //si son 3 entra dentro del if y bloquea la cuenta
                     if(cache.CountLoginFailed(loginDtoIn.Email))
                     {
-                        //Bloquear cuenta aqui, tengo que crear UserService para eso
+                        //Bloqueo la cuenta
+                        userService.BlockUser(loginDtoIn.Email);
                     }
-                    return BadRequest();
+                    return Unauthorized();
                 }
 
                

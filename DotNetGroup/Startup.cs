@@ -20,6 +20,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.Extensions.Caching.Memory;
 using Infraestructure.Services.CacheService;
+using Infraestructure.Services.UserService;
 
 namespace DotNetGroup
 {
@@ -69,6 +70,7 @@ namespace DotNetGroup
             services.AddScoped<ILoginService, LoginService>();
             services.AddTransient<ITokenService, TokenService>();
             services.AddSingleton<ICacheService, CacheService>();
+            services.AddTransient<IUserService, UserService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

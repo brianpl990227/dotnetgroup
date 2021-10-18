@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain.DtoIn
+namespace User.Domain.DtoIn
 {
     public class LoginDto
     {

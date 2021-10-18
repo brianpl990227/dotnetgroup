@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Infraestructure.Data;
-using Domain.DbModel;
+using User.Domain.DbModel;
 
 namespace Infraestructure.Services.UserService
 {
@@ -17,7 +17,7 @@ namespace Infraestructure.Services.UserService
             context = _context;
         }
         
-        public async void BlockUser(string email)
+        public void BlockUser(string email)
         {
             //Extraigo el usuario de la BD que estoy buscando segun el correo que
             //voy a bloquear

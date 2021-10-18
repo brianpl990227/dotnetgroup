@@ -22,7 +22,7 @@ using Microsoft.Extensions.Caching.Memory;
 using Infraestructure.Services.CacheService;
 using Infraestructure.Services.UserService;
 
-namespace DotNetGroup
+namespace User.API
 {
     public class Startup
     {

@@ -4,13 +4,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Domain.DtoIn;
+using User.Domain.DtoIn;
 using Infraestructure.Services.LoginService;
 using Microsoft.Extensions.Caching.Memory;
 using Infraestructure.Services.CacheService;
 using Infraestructure.Services.UserService;
 
-namespace DotNetGroup.Controllers
+namespace User.API.Controllers
 {
     [Route("[controller]")]
     [ApiController]

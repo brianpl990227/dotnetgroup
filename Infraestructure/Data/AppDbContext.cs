@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Domain.DbModel;
+using User.Domain.DbModel;
 using System.Reflection;
 
 namespace Infraestructure.Data

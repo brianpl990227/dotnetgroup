@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using User.Domain.DbModel;
 using System.Reflection;
 
-namespace Infraestructure.Data
+namespace User.Infraestructure.Data
 {
     public class AppDbContext : DbContext
     {

@@ -5,10 +5,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using User.Domain.DtoIn;
-using Infraestructure.Services.LoginService;
+using User.Infraestructure.Services.LoginService;
 using Microsoft.Extensions.Caching.Memory;
-using Infraestructure.Services.CacheService;
-using Infraestructure.Services.UserService;
+using User.Infraestructure.Services.CacheService;
+using User.Infraestructure.Services.UserService;
 
 namespace User.API.Controllers
 {
@@ -35,7 +35,7 @@ namespace User.API.Controllers
          * @return {string} token - Token de autenticación del usuario, es un Jwt (Json Web Token)
          **/
         [HttpPost]
-        public ActionResult<string> Login(LoginDto loginDtoIn)
+        public IActionResult Login(LoginDto loginDtoIn)
         {
             try
             {
@@ -49,7 +49,7 @@ namespace User.API.Controllers
                 string token = loginService.SignIn(loginDtoIn);
 
                 //Si tengo un token HTTPStatusCode = 200
-                if(token != null)
+                if(token != "")
                 {
                     return Ok(token);
                 }
@@ -61,8 +61,9 @@ namespace User.API.Controllers
                     {
                         //Bloqueo la cuenta
                         userService.BlockUser(loginDtoIn.Email);
+                        return Unauthorized();
                     }
-                    return Unauthorized();
+                    return BadRequest();
                 }
 
                

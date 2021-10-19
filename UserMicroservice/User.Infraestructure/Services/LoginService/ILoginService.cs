@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using User.Domain.DtoIn;
 
-namespace Infraestructure.Services.LoginService
+namespace User.Infraestructure.Services.LoginService
 {
     public interface ILoginService
     {

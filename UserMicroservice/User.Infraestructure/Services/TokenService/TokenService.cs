@@ -7,18 +7,17 @@ using System.Threading.Tasks;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using Microsoft.Extensions.Configuration;
+using User.Infraestructure.Services.TokenService;
 
-namespace Infraestructure.Services.TokenService
+namespace User.Infraestructure.Services.TokenService
 {
     public class TokenService : ITokenService
     {
         private IConfiguration configuration { get; }
 
-        public TokenService(IConfiguration config)
-        {
-            //Inyecto ICOnfiguration para poder acceder al appseting.json y obtener el key posteriormente
-            configuration = config;
-        }
+        //Inyecto ICOnfiguration para poder acceder al appseting.json y obtener el key posteriormente
+        public TokenService(IConfiguration config) => configuration = config;
+
         public string BuildToken(string email)
         {
    

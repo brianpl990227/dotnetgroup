@@ -5,16 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Infraestructure.Services.CacheService
+namespace User.Infraestructure.Services.CacheService
 {
     public class CacheService : ICacheService
     {
         private readonly IMemoryCache cache;
 
-        public CacheService(IMemoryCache _cache)
-        {
-            cache = _cache;
-        }
+        public CacheService(IMemoryCache _cache) => cache = _cache;
+       
 
         public bool CountLoginFailed(string email)
         {

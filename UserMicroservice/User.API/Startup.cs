@@ -11,16 +11,16 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Infraestructure.Data;
+using User.Infraestructure.Data;
 using Microsoft.EntityFrameworkCore;
-using Infraestructure.Services.LoginService;
-using Infraestructure.Services.TokenService;
+using User.Infraestructure.Services.LoginService;
+using User.Infraestructure.Services.TokenService;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.Extensions.Caching.Memory;
-using Infraestructure.Services.CacheService;
-using Infraestructure.Services.UserService;
+using User.Infraestructure.Services.CacheService;
+using User.Infraestructure.Services.UserService;
 
 namespace User.API
 {

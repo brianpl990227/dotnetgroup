@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using User.Domain.DtoIn;
-using Infraestructure.Data;
-using Infraestructure.Services.TokenService;
+using User.Infraestructure.Data;
+using User.Infraestructure.Services.TokenService;
 using User.Domain.DbModel;
 
-namespace Infraestructure.Services.LoginService
+namespace User.Infraestructure.Services.LoginService
 {
     public class LoginService : ILoginService
     {
@@ -28,7 +28,7 @@ namespace Infraestructure.Services.LoginService
             var result = db.AppUsers.Where(x => x.Email == loginDto.Email && x.Password == loginDto.Password).Select(x => x.Email).FirstOrDefault();
 
             //Si result tiene el correo lo paso como parametro a tokenService para construir el token, si no lo tiene retorno null
-            return result != null ? tokenService.BuildToken(result) : null;
+            return result != null ? tokenService.BuildToken(result) : "";
         }
 
 

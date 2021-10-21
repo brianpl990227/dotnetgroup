@@ -36,10 +36,12 @@ namespace User.Test.Login_UH01
                 UserId = 10
             };
 
-            var mockAuthManager = new Mock<IAuthManager>();
-            mockAuthManager.Setup(auth => auth.SignInWithEmail(loginMO)).Returns(new LoginResultMO
-            { ResultLogin = 1, Token = "sfrguvy43287rfh8wie4y3267gtf64872trgfy", UserId = 1 });
-            var controller = new AuthController(mockAuthManager.Object);
+            var mockAuthManager =  Mock.Of<IAuthManager>();
+            Mock.Get(mockAuthManager)
+                .Setup(x => x.SignInWithEmail(It.IsAny<LoginMO>()))
+                .Returns(new LoginResultMO{ ResultLogin = 1, Token = "sfrguvy43287rfh8wie4y3267gtf64872trgfy", UserId = 1 });
+
+            var controller = new AuthController(mockAuthManager);
 
             //Act
             var actionResult = controller.Login(loginDto);
@@ -76,9 +78,12 @@ namespace User.Test.Login_UH01
              
             };
 
-            var mockAuthManager = new Mock<IAuthManager>();
-            mockAuthManager.Setup(auth => auth.SignInWithEmail(loginMO)).Returns(result);
-            var controller = new AuthController(mockAuthManager.Object);
+            var mockAuthManager = Mock.Of<IAuthManager>();
+            Mock.Get(mockAuthManager)
+                .Setup(x => x.SignInWithEmail(It.IsAny<LoginMO>()))
+                .Returns(new LoginResultMO { ResultLogin = 0});
+
+            var controller = new AuthController(mockAuthManager);
 
             //Act
             var actionResult = controller.Login(loginDto);

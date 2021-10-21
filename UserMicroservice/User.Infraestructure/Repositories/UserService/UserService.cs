@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using User.Infraestructure.Data;
-using User.Domain.DbModel;
+
 
 namespace User.Infraestructure.Services.UserService
 {
@@ -23,15 +23,15 @@ namespace User.Infraestructure.Services.UserService
             user.Blocked = true;
             
             //Actualizo el valor en la base de datos
-            context.Update<AppUser>(user);
+            context.Update(user);
 
             context.SaveChanges();
 
         }
 
-        public bool isItBlocked(string email)
+        public bool isItBlocked(string Email)
         {
-            return context.AppUsers.Where(x => x.Email == email).Select(x => x.Blocked).FirstOrDefault();                 
+            return context.AppUsers.Where(x => x.Email == Email).Select(x => x.Blocked).FirstOrDefault();                 
         }
 
         

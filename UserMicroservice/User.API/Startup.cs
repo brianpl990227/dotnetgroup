@@ -13,14 +13,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using User.Infraestructure.Data;
 using Microsoft.EntityFrameworkCore;
-using User.Infraestructure.Services.LoginService;
-using User.Infraestructure.Services.TokenService;
+using User.Infraestructure.Repositories;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.Extensions.Caching.Memory;
-using User.Infraestructure.Services.CacheService;
 using User.Infraestructure.Services.UserService;
+using User.IoC;
 
 namespace User.API
 {
@@ -39,16 +38,17 @@ namespace User.API
 
             services.AddControllers();
             services.AddMemoryCache().AddSingleton<IMemoryCache, MemoryCache>();
+            services.AddServiceTest();
 
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "UserMicroservice", Version = "v1" });
             });
 
-            services.AddDbContext<AppDbContext>(options =>
+         /*   services.AddDbContext<AppDbContext>(options =>
             {
                 options.UseNpgsql(Configuration.GetConnectionString("Dev"));
-            });
+            });*/
 
             services.AddAuthentication(options =>
             {
@@ -67,10 +67,8 @@ namespace User.API
                 };
             });
 
-            services.AddScoped<ILoginService, LoginService>();
-            services.AddTransient<ITokenService, TokenService>();
-            services.AddSingleton<ICacheService, CacheService>();
-            services.AddTransient<IUserService, UserService>();
+            
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

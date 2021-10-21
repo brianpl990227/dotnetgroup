@@ -1,12 +1,13 @@
 using System;
 using Xunit;
 using Moq;
-using User.Infraestructure.Services.LoginService;
-using User.Domain.DtoIn;
-using User.Infraestructure.Services.CacheService;
-using User.Infraestructure.Services.UserService;
+using User.Infraestructure.Repositories;
 using User.API.Controllers;
 using Microsoft.AspNetCore.Mvc;
+using User.Domain.Repositories.Auth;
+using User.Domain.Auth.Login;
+using User.Application.Auth;
+using User.API.Dto.Auth;
 
 namespace User.Test.Login_UH01
 {
@@ -21,21 +22,36 @@ namespace User.Test.Login_UH01
                 Email = "brianpl",
                 Password = "12345"
             };
-            var mockLoginService = new Mock<ILoginService>();
-            mockLoginService.Setup(login => login.SignIn(loginDto)).Returns("12312312312edq3ewsdfr313r3q25r2354");
-            var mockCacheService = new Mock<ICacheService>();          
-            var mockUserService = new Mock<IUserService>();
-            mockUserService.Setup(user => user.isItBlocked(loginDto.Email)).Returns(false);
-            var controller = new AuthController(mockLoginService.Object, mockCacheService.Object, mockUserService.Object);
+
+            LoginMO loginMO = new LoginMO()
+            {
+                Email = loginDto.Email,
+                Password = loginDto.Password
+            };
+
+            LoginResultMO result = new LoginResultMO()
+            {
+                ResultLogin = 1,
+                Token = "seardfgvhsdbfvhwsdbefcvhyg8276t732wtgdqywgedyuqwgvas8yd",
+                UserId = 10
+            };
+
+            var mockAuthManager = new Mock<IAuthManager>();
+            mockAuthManager.Setup(auth => auth.SignInWithEmail(loginMO)).Returns(new LoginResultMO
+            { ResultLogin = 1, Token = "sfrguvy43287rfh8wie4y3267gtf64872trgfy", UserId = 1 });
+            var controller = new AuthController(mockAuthManager.Object);
 
             //Act
             var actionResult = controller.Login(loginDto);
 
             //Assert
             var ok = actionResult as OkObjectResult;
-           
-            Assert.Equal("12312312312edq3ewsdfr313r3q25r2354", ok.Value);
-            Assert.IsType<OkObjectResult>(ok);
+          //  var response = ok.Value as LoginResultDto;
+            
+
+         // Assert.Equal("seardfgvhsdbfvhwsdbefcvhyg8276t732wtgdqywgedyuqwgvas8yd", response.Token);
+       //     Assert.Equal(10, response.UserId);
+            Assert.IsType<OkObjectResult>(actionResult);
         }
 
         [Fact]
@@ -47,44 +63,30 @@ namespace User.Test.Login_UH01
                 Email = "brianpl",
                 Password = "12345"
             };
-            var mockLoginService = new Mock<ILoginService>();
-            var mockCacheService = new Mock<ICacheService>();
-            var mockUserService = new Mock<IUserService>();
-            mockUserService.Setup(user => user.isItBlocked(loginDto.Email)).Returns(true);
-            var controller = new AuthController(mockLoginService.Object, mockCacheService.Object, mockUserService.Object);
 
-            //Act
-            var actionResult = controller.Login(loginDto);
-
-
-            //Assert
-            Assert.IsType<UnauthorizedResult>(actionResult);
-
-        }
-
-        [Fact]
-        public void Block_Account_Test()
-        {
-            //Arrange
-            LoginDto loginDto = new LoginDto()
+            LoginMO loginMO = new LoginMO()
             {
-                Email = "brianpl",
-                Password = "12345"
+                Email = loginDto.Email,
+                Password = loginDto.Password
             };
 
-            var mockLoginService = new Mock<ILoginService>();
-            var mockCacheService = new Mock<ICacheService>();
-            var mockUserService = new Mock<IUserService>();
-            mockUserService.Setup(user => user.isItBlocked(loginDto.Email)).Returns(false);
-            mockLoginService.Setup(login => login.SignIn(loginDto)).Returns("");
-            mockCacheService.Setup(cache => cache.CountLoginFailed(loginDto.Email)).Returns(true);
-            var controller = new AuthController(mockLoginService.Object, mockCacheService.Object, mockUserService.Object);
+            LoginResultMO result = new LoginResultMO()
+            {
+                ResultLogin = 0,
+             
+            };
+
+            var mockAuthManager = new Mock<IAuthManager>();
+            mockAuthManager.Setup(auth => auth.SignInWithEmail(loginMO)).Returns(result);
+            var controller = new AuthController(mockAuthManager.Object);
 
             //Act
             var actionResult = controller.Login(loginDto);
 
             //Assert
             Assert.IsType<UnauthorizedResult>(actionResult);
+
+
         }
 
         [Fact]
@@ -94,25 +96,35 @@ namespace User.Test.Login_UH01
             LoginDto loginDto = new LoginDto()
             {
                 Email = "brianpl",
-                Password = "12345"
+                Password = "123456"
             };
 
-            var mockLoginService = new Mock<ILoginService>();
-            var mockCacheService = new Mock<ICacheService>();
-            var mockUserService = new Mock<IUserService>();
-            mockUserService.Setup(user => user.isItBlocked(loginDto.Email)).Returns(false);
-            mockLoginService.Setup(login => login.SignIn(loginDto)).Returns("");
-            mockCacheService.Setup(cache => cache.CountLoginFailed(loginDto.Email)).Returns(false);
-            var controller = new AuthController(mockLoginService.Object, mockCacheService.Object, mockUserService.Object);
+            LoginMO loginMO = new LoginMO()
+            {
+                Email = loginDto.Email,
+                Password = loginDto.Password
+            };
+
+            LoginResultMO result = new LoginResultMO()
+            {
+                ResultLogin = -1,
+
+            };
+
+            var mockAuthManager = new Mock<IAuthManager>();
+            mockAuthManager.Setup(auth => auth.SignInWithEmail(loginMO)).Returns(result);
+            var controller = new AuthController(mockAuthManager.Object);
 
             //Act
             var actionResult = controller.Login(loginDto);
 
             //Assert
+
             Assert.IsType<BadRequestResult>(actionResult);
+
         }
 
-
+       
 
     }
 }

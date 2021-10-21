@@ -4,8 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using User.Domain.DbModel;
 using System.Reflection;
+using User.Infraestructure.Data.DbModels;
 
 namespace User.Infraestructure.Data
 {
@@ -13,7 +13,7 @@ namespace User.Infraestructure.Data
     {
 
         public DbSet<AppUser> AppUsers { get; set; }
-
+        public DbSet<FailUserLogin> FailUserLogin { get; set; }
         public AppDbContext()
         {
 

@@ -4,11 +4,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using User.Domain.DtoIn;
-using User.Infraestructure.Services.LoginService;
-using Microsoft.Extensions.Caching.Memory;
-using User.Infraestructure.Services.CacheService;
-using User.Infraestructure.Services.UserService;
+using User.Application.Auth;
+using User.API.Dto.Auth;
+using User.Domain.Repositories.Auth;
 
 namespace User.API.Controllers
 {
@@ -16,17 +14,10 @@ namespace User.API.Controllers
     [ApiController]
     public class AuthController : ControllerBase
     {
-        private readonly ILoginService loginService;
-        private readonly ICacheService cache;
-        private readonly IUserService userService;
-
-        public AuthController(ILoginService _loginService, ICacheService _cache, IUserService _userService)
-        {
-            //Proveo una instancias mendiante una inyecciones de dependencia
-            loginService = _loginService;
-            userService = _userService;
-            cache = _cache;
-        }
+        private readonly IAuthManager authManager;
+        public AuthController(IAuthManager _authManager) => authManager = _authManager;
+        
+           
 
         /**
          * Endpoint para hacer login en el sistema
@@ -35,46 +26,41 @@ namespace User.API.Controllers
          * @return {string} token - Token de autenticación del usuario, es un Jwt (Json Web Token)
          **/
         [HttpPost]
-        public IActionResult Login(LoginDto loginDtoIn)
+        public IActionResult Login(LoginDto login)
         {
             try
             {
-                bool blocked = userService.isItBlocked(loginDtoIn.Email);
-                if (blocked)
+                LoginMO loginMO = new LoginMO()
                 {
-                    return Unauthorized();
-                }
+                    Email = login.Email,
+                    Password = login.Password
+                };
 
-                //Se llama al servicio de login y se espera un valor de tipo string
-                string token = loginService.SignIn(loginDtoIn);
+                var loginResult = authManager.SignInWithEmail(loginMO);
 
-                //Si tengo un token HTTPStatusCode = 200
-                if(token != "")
+                LoginResultDto loginDtoOut = new LoginResultDto()
                 {
-                    return Ok(token);
-                }
-                else
+                    UserId = loginResult.UserId,
+                    Token = loginResult.Token
+                };
+
+                switch (loginResult.ResultLogin)
                 {
-                    //Si el intento de login fue fallido (no tengo token), cuento un intento fallido
-                    //si son 3 entra dentro del if y bloquea la cuenta
-                    if(cache.CountLoginFailed(loginDtoIn.Email))
-                    {
-                        //Bloqueo la cuenta
-                        userService.BlockUser(loginDtoIn.Email);
+                    case 1:
+                        return Ok("ddfglkbfsrxkhvgfnskhgvdbhv");
+                    case -1:
+                        return BadRequest();
+                    case 0:
                         return Unauthorized();
-                    }
-                    return BadRequest();
-                }
+                    default:
+                        return BadRequest();
 
-               
+                };
             }
-            catch(Exception e)
+            catch
             {
-                //Si paso algo, capturo la excepción y le mando el mensaje de la excepción al cliente
-               return BadRequest(e.Message);
+                return BadRequest();
             }
-           
- 
         }
 
     }

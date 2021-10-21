@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace User.Infraestructure.Services.TokenService
+namespace User.Domain.Auth.Token
 {
-    public interface ITokenService
+    public interface ITokenRepository
     {
-        string BuildToken(string email);
+        TokenResult BuildToken(TokenMO x);
     }
 }

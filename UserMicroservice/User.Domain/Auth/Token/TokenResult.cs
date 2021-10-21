@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace User.Infraestructure.Services.CacheService
+namespace User.Domain.Auth.Token
 {
-    public interface ICacheService
+    public class TokenResult
     {
-        bool CountLoginFailed(string email);
+        public string Token { get; set; }
     }
 }

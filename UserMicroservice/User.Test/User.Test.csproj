@@ -22,6 +22,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\User.API\User.API.csproj" />
+    <ProjectReference Include="..\User.Application\User.Application.csproj" />
+    <ProjectReference Include="..\User.Domain\User.Domain.csproj" />
     <ProjectReference Include="..\User.Infraestructure\User.Infraestructure.csproj" />
   </ItemGroup>
 

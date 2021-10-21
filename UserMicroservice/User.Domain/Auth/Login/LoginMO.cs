@@ -4,13 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace User.Domain.DbModel
+namespace User.Domain.Repositories.Auth
 {
-    public class AppUser
+    public class LoginMO
     {
-        public int Id { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
-        public bool Blocked { get; set; }
     }
 }

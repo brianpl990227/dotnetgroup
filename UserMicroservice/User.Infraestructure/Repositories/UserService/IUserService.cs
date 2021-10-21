@@ -9,6 +9,6 @@ namespace User.Infraestructure.Services.UserService
     public interface IUserService
     {
         void BlockUser(string email);
-        bool isItBlocked(string email);
+       
     }
 }

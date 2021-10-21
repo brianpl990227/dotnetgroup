@@ -7,18 +7,20 @@ using System.Threading.Tasks;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using Microsoft.Extensions.Configuration;
-using User.Infraestructure.Services.TokenService;
+using User.Infraestructure.Repositories;
+using User.Domain.Repositories.Auth;
+using User.Domain.Auth.Token;
 
-namespace User.Infraestructure.Services.TokenService
+namespace User.Infraestructure.Repositories
 {
-    public class TokenService : ITokenService
+    public class TokenRepository : ITokenRepository
     {
         private IConfiguration configuration { get; }
 
         //Inyecto ICOnfiguration para poder acceder al appseting.json y obtener el key posteriormente
-        public TokenService(IConfiguration config) => configuration = config;
+        public TokenRepository(IConfiguration config) => configuration = config;
 
-        public string BuildToken(string email)
+        public TokenResult BuildToken(TokenMO TokenMO)
         {
    
             //Creo los claims con los que voy a contruir mi token
@@ -26,7 +28,7 @@ namespace User.Infraestructure.Services.TokenService
             var claims = new[]
             {
                 new Claim("id", Guid.NewGuid().ToString()),
-                new Claim("email", email),
+                new Claim("email", TokenMO.Email),
 
             };
 
@@ -47,7 +49,11 @@ namespace User.Infraestructure.Services.TokenService
                 signingCredentials: creds);
 
             //Escribo mi token, Esto devuelve un string largo y raro encriptado
-            return new JwtSecurityTokenHandler().WriteToken(token);
+            TokenResult tokenR = new TokenResult()
+            {
+                Token = new JwtSecurityTokenHandler().WriteToken(token)
+            }; 
+            return  tokenR;
         }
     }
 }

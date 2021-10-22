@@ -26,7 +26,7 @@ namespace User.API.Controllers
          * @return {string} token - Token de autenticación del usuario, es un Jwt (Json Web Token)
          **/
         [HttpPost]
-        public IActionResult Login(LoginDto login)
+        public ActionResult Login(LoginDto login)
         {
             try
             {
@@ -57,9 +57,9 @@ namespace User.API.Controllers
 
                 };
             }
-            catch
+            catch(Exception e)
             {
-                return BadRequest();
+                return BadRequest(e.Message);
             }
         }
 

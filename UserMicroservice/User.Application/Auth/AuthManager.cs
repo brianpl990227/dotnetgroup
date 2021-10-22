@@ -66,6 +66,10 @@ namespace User.Application.Auth
             return loginResult;
         }
 
+        public int cero(int x)
+        {
+            return x;
+        }
        
     }
 }

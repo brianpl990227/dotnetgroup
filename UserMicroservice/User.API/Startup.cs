@@ -20,6 +20,7 @@ using System.Text;
 using Microsoft.Extensions.Caching.Memory;
 using User.Infraestructure.Services.UserService;
 using User.IoC;
+using User.Application.Auth;
 
 namespace User.API
 {
@@ -39,6 +40,7 @@ namespace User.API
             services.AddControllers();
             services.AddMemoryCache().AddSingleton<IMemoryCache, MemoryCache>();
             services.AddServiceTest();
+          
 
             services.AddSwaggerGen(c =>
             {
@@ -67,7 +69,7 @@ namespace User.API
                 };
             });
 
-            
+            services.AddTransient<IAuthManager, AuthManager>();
             
         }
 

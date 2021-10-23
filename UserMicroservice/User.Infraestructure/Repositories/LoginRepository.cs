@@ -30,7 +30,7 @@ namespace User.Infraestructure.Repositories
 
             //Se devuelve el usuario que coincida con las credenciales de loginDto y se guarda en result
             var result = db.AppUsers.Where(x => x.Email == loginDto.Email && x.Password == loginDto.Password)
-                .Select(x => new { Id = x.Id, Blocked = x.Blocked }).FirstOrDefault();
+                .Select(x => new { Id = x.Id}).FirstOrDefault();
 
             if(result != null)
             {

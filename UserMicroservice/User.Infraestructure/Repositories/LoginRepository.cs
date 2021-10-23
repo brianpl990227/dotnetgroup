@@ -65,7 +65,7 @@ namespace User.Infraestructure.Repositories
             if (failFound != null)
             {
                 failFound.Time++;
-                if (failFound.Time != 3)
+                if (failFound.Time < 3)
                 {
                     
                     db.Update(failFound);

@@ -24,7 +24,6 @@
   <ItemGroup>
     <ProjectReference Include="..\User.API\User.API.csproj" />
     <ProjectReference Include="..\User.Application\User.Application.csproj" />
-    <ProjectReference Include="..\User.IoC\User.IoC\User.IoC.csproj" />
   </ItemGroup>
 
 </Project>

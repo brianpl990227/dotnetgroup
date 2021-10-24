@@ -39,6 +39,7 @@ Escoger la metodología de trabajo es uno de los pasos más importantes en la et
 - PostgreSQL
 - MongoDb
 - Entity Framework Core
+- Docker
 
 ### Documentación y videos 📚
 A medida que vaya avanzando el desarrollo toda la bibliografía y videos para la implementación del sistema se irá poniendo aquí

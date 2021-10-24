@@ -21,7 +21,7 @@ El sistema contará con un arquitectura de microservicios, y seguiremos dentro d
 
 La arquitectura de microservicios si bien no es necesario Docker para su implementación y despliegue, alcanza su verdadero potencial usando esta tecnología. 
 
-Como recomendación te recomendamos el siguiente e-book el cual me fue de mucha ayuda para aprender Docker y esta arquitecura
+Como recomendación te dejamos el siguiente e-book el cual me fue de mucha ayuda para aprender Docker y esta arquitecura
 
 https://raw.githubusercontent.com/dotnet-architecture/eBooks/main/current/microservices/NET-Microservices-Architecture-for-Containerized-NET-Applications.pdf
 

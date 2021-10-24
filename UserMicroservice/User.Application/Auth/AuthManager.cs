@@ -25,19 +25,19 @@ namespace User.Application.Auth
             user = _user;
         }
 
-        public LoginResultMO SignInWithEmail(LoginMO loginMO)
+        public async Task<LoginResultMO> SignInWithEmailAsync(LoginMO loginMO)
         {
-            if(!user.Exist(loginMO))
+            if( !await user.ExistAsync(loginMO))
             {
                 return new LoginResultMO() { ResultLogin = -1 };
             }
 
-            if(user.IsItBlocked(loginMO))
+            if(await user.IsItBlockedAsync(loginMO))
             {
                 return new LoginResultMO() { ResultLogin = 0 };
             }
 
-            var loginResult = login.SignIn(loginMO);
+            var loginResult = await login.SignInAsync(loginMO);
             
             switch(loginResult.ResultLogin)
             {
@@ -49,10 +49,11 @@ namespace User.Application.Auth
 
                     var tokenResult = token.BuildToken(tokenMO);
                     loginResult.Token = tokenResult.Token;
+                    login.RemoveFail(loginMO);
                     break;
 
                 case -1:
-                    var loginFailResult = login.AddFail(loginMO);
+                    var loginFailResult = await login.AddFailAsync(loginMO);
 
                     if(loginFailResult.Blocked)
                     {

@@ -8,6 +8,7 @@ using User.Infraestructure.Data;
 using User.Infraestructure.Repositories;
 using User.Domain.Repositories.Auth;
 using User.Infraestructure.Data.DbModels;
+using Microsoft.EntityFrameworkCore;
 
 namespace User.Infraestructure.Repositories
 {
@@ -23,14 +24,12 @@ namespace User.Infraestructure.Repositories
             Failed = -1
         }
 
-        public LoginResultMO SignIn(LoginMO loginDto)
+        public async Task<LoginResultMO> SignInAsync(LoginMO loginDto)
         {
 
-            
-
             //Se devuelve el usuario que coincida con las credenciales de loginDto y se guarda en result
-            var result = db.AppUsers.Where(x => x.Email == loginDto.Email && x.Password == loginDto.Password)
-                .Select(x => new { Id = x.Id}).FirstOrDefault();
+            var result = await db.AppUsers.Where(x => x.Email == loginDto.Email && x.Password == loginDto.Password)
+                .Select(x => new { Id = x.Id }).FirstOrDefaultAsync();
 
             if(result != null)
             {
@@ -53,11 +52,11 @@ namespace User.Infraestructure.Repositories
 
         }
 
-        public LoginFailResultMO AddFail(LoginMO failLogin)
+        public async Task<LoginFailResultMO> AddFailAsync(LoginMO failLogin)
         {
             
 
-            var failFound = db.FailUserLogin.Where(x => x.appUserEmail == failLogin.Email).FirstOrDefault();
+            var failFound = await db.FailUserLogin.Where(x => x.appUserEmail == failLogin.Email).FirstOrDefaultAsync();
             
             LoginFailResultMO loginFailResult = new LoginFailResultMO();
 
@@ -69,7 +68,7 @@ namespace User.Infraestructure.Repositories
                 {
                     
                     db.Update(failFound);
-                    db.SaveChanges();
+                    await db.SaveChangesAsync();
                     loginFailResult.Blocked = false;
                 }
                 else
@@ -86,12 +85,30 @@ namespace User.Infraestructure.Repositories
                 };
 
                 db.FailUserLogin.Add(entity);
-                db.SaveChanges();
+                await db.SaveChangesAsync();
                 loginFailResult.Blocked = false;
             }
 
             
             return loginFailResult;
+        }
+
+        public void RemoveFail(LoginMO loginMO)
+        {
+            
+                
+            var result = db.FailUserLogin.Where(x => x.appUserEmail == loginMO.Email)
+            .FirstOrDefault();
+
+            if(result != null)
+            {
+                db.Remove(result);
+                db.SaveChanges();
+            }
+               
+                
+            
+            
         }
 
 

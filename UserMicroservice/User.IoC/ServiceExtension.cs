@@ -31,5 +31,5 @@ namespace User.IoC
             services.AddScoped<IAuthManager, AuthManager>();
             services.AddScoped<IUserRepository, UserRepository>();
         }
-    } //Esto es una prueba
+    } 
 }

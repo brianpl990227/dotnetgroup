@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,11 +16,11 @@ namespace User.Infraestructure.Repositories
 
         public UserRepository(AppDbContext _db) => db = _db;
 
-        public bool IsItBlocked(LoginMO loginMo)
+        public async Task<bool> IsItBlockedAsync(LoginMO loginMo)
         {
-           var blocked = db.AppUsers.Where(x => x.Email == loginMo.Email).Select(x => x.Blocked).FirstOrDefault();
+           var blocked = await db.AppUsers.Where(x => x.Email == loginMo.Email).Select(x => x.Blocked).FirstOrDefaultAsync();
 
-            return blocked;
+           return blocked;
         }
 
         public void BlockUser(LoginMO loginMo)
@@ -36,9 +37,9 @@ namespace User.Infraestructure.Repositories
             db.SaveChanges();
         }
 
-        public bool Exist(LoginMO loginMO)
+        public async Task<bool> ExistAsync(LoginMO loginMO)
         {
-            return db.AppUsers.Any(x => x.Email == loginMO.Email);
+            return await db.AppUsers.AnyAsync(x => x.Email == loginMO.Email);
         }
 
 

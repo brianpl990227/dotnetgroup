@@ -1,4 +1,4 @@
-# dotnetgroup
+# Iniciativa de Dotnetgroup
 Proyecto para aprender :)
 
 Este proyecto se hace con el fin de especializarnos
@@ -9,3 +9,6 @@ de desarrollo de software únete a nuestro grupo de
 Telegram
 
 https://t.me/dotnetdevspanish
+
+# Arquitectura
+El sistema contará con un arquitectura de microservicios, y seguiremos dentro de cada microservicios un patrón DDD

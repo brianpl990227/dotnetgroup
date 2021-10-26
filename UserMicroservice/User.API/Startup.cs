@@ -38,9 +38,8 @@ namespace User.API
         {
 
             services.AddControllers();
-            services.AddMemoryCache().AddSingleton<IMemoryCache, MemoryCache>();
-            services.AddServiceTest();
-          
+            services.AddServiceExtension();
+            services.AddServicePostgreSQL();
 
             services.AddSwaggerGen(c =>
             {
@@ -69,8 +68,7 @@ namespace User.API
                 };
             });
 
-            services.AddTransient<IAuthManager, AuthManager>();
-            
+                       
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

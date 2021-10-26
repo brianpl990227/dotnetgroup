@@ -8,8 +8,9 @@ using User.Domain.Repositories.Auth;
 using User.Domain.Auth.Login;
 using User.Application.Auth;
 using User.API.Dto.Auth;
+using System.Threading.Tasks;
 
-namespace User.Test.Login_UH01
+namespace User.Test.Controller.Auth.Login_UH01
 {
     public class LoginTest
     {
@@ -40,13 +41,13 @@ namespace User.Test.Login_UH01
 
             var mockAuthManager =  Mock.Of<IAuthManager>();
             Mock.Get(mockAuthManager)
-                .Setup(x => x.SignInWithEmail(It.IsAny<LoginMO>()))
-                .Returns(new LoginResultMO{ ResultLogin = 1, Token = "sfrguvy43287rfh8wie4y3267gtf64872trgfy", UserId = 1 });
+                .Setup(x => x.SignInWithEmailAsync(It.IsAny<LoginMO>()))
+                .Returns(Task.FromResult(new LoginResultMO { ResultLogin = 1, Token = "sfrguvy43287rfh8wie4y3267gtf64872trgfy", UserId = 1 })) ;
 
             var controller = new AuthController(mockAuthManager);
 
             //Act
-            var actionResult = controller.Login(loginDto);
+            var actionResult = controller.Login(loginDto).Result;
 
             //Assert
             var ok = actionResult as OkObjectResult;
@@ -82,13 +83,13 @@ namespace User.Test.Login_UH01
 
             var mockAuthManager = Mock.Of<IAuthManager>();
             Mock.Get(mockAuthManager)
-                .Setup(x => x.SignInWithEmail(It.IsAny<LoginMO>()))
-                .Returns(new LoginResultMO { ResultLogin = 0});
+                .Setup(x => x.SignInWithEmailAsync(It.IsAny<LoginMO>()))
+                .Returns(Task.FromResult(new LoginResultMO { ResultLogin = 0}));
 
             var controller = new AuthController(mockAuthManager);
 
             //Act
-            var actionResult = controller.Login(loginDto);
+            var actionResult = controller.Login(loginDto).Result;
 
             //Assert
             Assert.IsType<UnauthorizedResult>(actionResult);
@@ -120,12 +121,12 @@ namespace User.Test.Login_UH01
 
             var mockAuthManager = Mock.Of<IAuthManager>();
             Mock.Get(mockAuthManager)
-                .Setup(x => x.SignInWithEmail(It.IsAny<LoginMO>()))
-                .Returns(new LoginResultMO() { ResultLogin = -1 });
+                .Setup(x => x.SignInWithEmailAsync(It.IsAny<LoginMO>()))
+                .Returns(Task.FromResult(new LoginResultMO() { ResultLogin = -1 }));
             var controller = new AuthController(mockAuthManager);
 
             //Act
-            var actionResult = controller.Login(loginDto);
+            var actionResult = controller.Login(loginDto).Result;
 
             //Assert
 

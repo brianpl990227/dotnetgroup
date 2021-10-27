@@ -47,3 +47,4 @@ A medida que vaya avanzando el desarrollo toda la bibliografía y videos para la
 1) https://raw.githubusercontent.com/dotnet-architecture/eBooks/main/current/microservices/NET-Microservices-Architecture-for-Containerized-NET-Applications.pdf
 2) https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjK69zsn-LzAhV7QjABHUyyB-oQFnoECAIQAQ&url=https%3A%2F%2Foa.upm.es%2F54274%2F1%2FTFG_CARLOS_JIMENEZ_ALIAGA.pdf&usg=AOvVaw2Acx-FQ4-livoHX4BSiKbY
 3) https://docs.microsoft.com/es-es/aspnet/core/test/integration-tests?view=aspnetcore-5.0
+4) https://docs.microsoft.com/es-es/aspnet/core/mvc/controllers/testing?view=aspnetcore-5.0

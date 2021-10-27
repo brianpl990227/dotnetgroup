@@ -57,9 +57,9 @@ namespace User.API.Controllers
 
                 };
             }
-            catch(Exception e)
+            catch
             {
-                return BadRequest(e.Message);
+                return BadRequest("Algo ha pasado, contacte a soporte");
             }
         }
 

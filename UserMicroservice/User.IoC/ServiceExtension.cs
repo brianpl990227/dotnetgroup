@@ -19,17 +19,22 @@ namespace User.IoC
 {
     public static class ServiceExtension
     {
-        public static void AddServiceTest(this IServiceCollection services)
+        public static void AddServiceExtension(this IServiceCollection services)
         {
-            services.AddDbContext<AppDbContext>(options =>
-            {
-                options.UseNpgsql("Host=127.0.0.1;Port=5432;Database=UserMicroservice;User Id=postgres;Password=9902;");
-            });
-
             services.AddTransient<ILoginRepository, LoginRepository>();
             services.AddTransient<ITokenRepository, TokenRepository>();
             services.AddScoped<IAuthManager, AuthManager>();
             services.AddScoped<IUserRepository, UserRepository>();
         }
-    }
+
+        public static void AddServicePostgreSQL(this IServiceCollection services)
+        {
+            services.AddDbContext<AppDbContext>(options =>
+            {
+                options.UseNpgsql("Host=127.0.0.1;Port=5432;Database=UserMicroservice;User Id=postgres;Password=9902;");
+            });
+        }
+
+     
+    } 
 }

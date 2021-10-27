@@ -9,8 +9,8 @@ namespace User.Domain.Auth.User
 {
     public interface IUserRepository
     {
-        bool IsItBlocked(LoginMO Mo);
+        Task<bool> IsItBlockedAsync(LoginMO Mo);
         void BlockUser(LoginMO Mo);
-        bool Exist(LoginMO Mo);
+        Task<bool> ExistAsync(LoginMO Mo);
     }
 }

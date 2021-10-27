@@ -9,7 +9,8 @@ namespace User.Domain.Auth.Login
 {
     public interface ILoginRepository
     {
-        LoginResultMO SignIn(LoginMO Mo);
-        LoginFailResultMO AddFail(LoginMO Mo);
+        Task<LoginResultMO> SignInAsync(LoginMO Mo);
+        Task<LoginFailResultMO> AddFailAsync(LoginMO Mo);
+        void RemoveFail(LoginMO Mo);
     }
 }

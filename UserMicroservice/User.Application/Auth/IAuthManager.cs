@@ -10,7 +10,7 @@ namespace User.Application.Auth
 {
     public interface IAuthManager
     {
-        LoginResultMO SignInWithEmail(LoginMO loginMO);
-        int cero(int x);
+        Task<LoginResultMO> SignInWithEmailAsync(LoginMO loginMO);
+        
     }
 }

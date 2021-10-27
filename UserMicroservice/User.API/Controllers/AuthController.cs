@@ -26,7 +26,7 @@ namespace User.API.Controllers
          * @return {string} token - Token de autenticación del usuario, es un Jwt (Json Web Token)
          **/
         [HttpPost]
-        public IActionResult Login(LoginDto login)
+        public async Task<IActionResult> Login(LoginDto login)
         {
             try
             {
@@ -36,7 +36,7 @@ namespace User.API.Controllers
                     Password = login.Password
                 };
 
-                var loginResult = authManager.SignInWithEmail(loginMO);
+                var loginResult = await authManager.SignInWithEmailAsync(loginMO);
 
                 LoginResultDto loginDtoOut = new LoginResultDto()
                 {

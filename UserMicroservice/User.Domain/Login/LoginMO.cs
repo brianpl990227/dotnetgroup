@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace User.Domain.Auth.Token
+namespace User.Domain.Login
 {
-    public class TokenMO
+    public class LoginMO
     {
         public string Email { get; set; }
-        
+        public string Password { get; set; }
     }
 }

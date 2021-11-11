@@ -4,8 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using User.Domain.Auth.User;
-using User.Domain.Repositories.Auth;
+using User.Domain.Login;
+using User.Domain.User;
 using User.Infraestructure.Data;
 
 namespace User.Infraestructure.Repositories

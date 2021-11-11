@@ -8,12 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using User.Application;
 using User.Application.Auth;
-using User.Domain.Auth.Login;
-using User.Domain.Auth.Token;
+using User.Domain.Login;
+using User.Domain.Token;
+using User.Domain.User;
 using User.Infraestructure.Data;
 using User.Infraestructure.Repositories;
-using User.Infraestructure.Services.UserService;
-using User.Domain.Auth.User;
 
 namespace User.IoC
 {

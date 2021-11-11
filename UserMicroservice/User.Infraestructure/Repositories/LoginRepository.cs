@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using User.Domain.Auth.Login;
+using User.Domain.Login;
 using User.Infraestructure.Data;
 using User.Infraestructure.Repositories;
-using User.Domain.Repositories.Auth;
 using User.Infraestructure.Data.DbModels;
 using Microsoft.EntityFrameworkCore;
 

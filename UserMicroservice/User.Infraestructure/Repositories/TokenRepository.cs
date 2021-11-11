@@ -8,8 +8,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using Microsoft.Extensions.Configuration;
 using User.Infraestructure.Repositories;
-using User.Domain.Repositories.Auth;
-using User.Domain.Auth.Token;
+using User.Domain.Token;
 
 namespace User.Infraestructure.Repositories
 {

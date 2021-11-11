@@ -18,7 +18,6 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.Extensions.Caching.Memory;
-using User.Infraestructure.Services.UserService;
 using User.IoC;
 using User.Application.Auth;
 

@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace User.Domain.Auth.Token
+namespace User.Domain.Login
 {
-    public interface ITokenRepository
+    public class LoginFailResultMO 
     {
-        TokenResult BuildToken(TokenMO x);
+        public bool Blocked { get; set; }
     }
 }

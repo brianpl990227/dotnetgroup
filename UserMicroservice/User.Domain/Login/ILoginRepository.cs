@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using User.Domain.Repositories.Auth;
+using User.Domain.Login;
 
-namespace User.Domain.Auth.Login
+namespace User.Domain.Login
 {
     public interface ILoginRepository
     {

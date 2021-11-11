@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using User.Domain.Auth.Login;
-using User.Domain.Auth.Token;
-using User.Domain.Auth.User;
-using User.Domain.Repositories.Auth;
+using User.Domain.Login;
+using User.Domain.Token;
+using User.Domain.User;
+
 
 
 namespace User.Application.Auth

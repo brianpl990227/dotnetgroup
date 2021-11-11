@@ -6,7 +6,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using User.Application.Auth;
 using User.API.Dto.Auth;
-using User.Domain.Repositories.Auth;
+using User.Domain.Login;
+using User.Infraestructure.Repositories;
 
 namespace User.API.Controllers
 {
@@ -28,39 +29,58 @@ namespace User.API.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(LoginDto login)
         {
+
+        
             try
             {
-                LoginMO loginMO = new LoginMO()
+                if (ModelState.IsValid)
                 {
-                    Email = login.Email,
-                    Password = login.Password
-                };
 
-                var loginResult = await authManager.SignInWithEmailAsync(loginMO);
 
-                LoginResultDto loginDtoOut = new LoginResultDto()
+                    LoginMO loginMO = new LoginMO()
+                    {
+                        Email = login.Email,
+                        Password = login.Password
+                    };
+
+                    var loginResult = await authManager.SignInWithEmailAsync(loginMO);
+
+                    LoginResultDto loginDtoOut = new LoginResultDto()
+                    {
+                        UserId = loginResult.UserId,
+                        Token = loginResult.Token
+                    };
+
+                    switch (loginResult.ResultLogin)
+                    {
+                        case 1:
+                            return Ok(loginDtoOut);
+                        case -1:
+                            return BadRequest();
+                        case 0:
+                            return Unauthorized();
+                        default:
+                            return BadRequest();
+
+                    };
+                }
+                else
                 {
-                    UserId = loginResult.UserId,
-                    Token = loginResult.Token
-                };
-
-                switch (loginResult.ResultLogin)
-                {
-                    case 1:
-                        return Ok(loginDtoOut);
-                    case -1:
-                        return BadRequest();
-                    case 0:
-                        return Unauthorized();
-                    default:
-                        return BadRequest();
-
-                };
+                    return BadRequest();
+                }
             }
             catch
             {
                 return BadRequest("Algo ha pasado, contacte a soporte");
             }
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> RecoverPassword()
+        {
+           await new EmailRepository().SendCode();
+
+            return Ok();
         }
 
     }

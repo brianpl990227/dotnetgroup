@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace User.Domain.Auth.Login
+namespace User.Domain.Login
 {
     public class LoginResultMO
     {

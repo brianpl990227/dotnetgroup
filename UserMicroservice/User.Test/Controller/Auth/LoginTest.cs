@@ -4,11 +4,10 @@ using Moq;
 using User.Infraestructure.Repositories;
 using User.API.Controllers;
 using Microsoft.AspNetCore.Mvc;
-using User.Domain.Repositories.Auth;
-using User.Domain.Auth.Login;
 using User.Application.Auth;
 using User.API.Dto.Auth;
 using System.Threading.Tasks;
+using User.Domain.Login;
 
 namespace User.Test.Controller.Auth.Login_UH01
 {

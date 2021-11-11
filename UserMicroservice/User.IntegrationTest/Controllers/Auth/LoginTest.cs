@@ -7,7 +7,7 @@ using System.Net.Http;
 using Newtonsoft.Json;
 using System.Text;
 using System.Net.Http.Headers;
-using User.Domain.Auth.Login;
+using User.Domain.Login;
 using System.Net;
 
 namespace User.IntegrationTest.Controllers.Auth
@@ -28,7 +28,7 @@ namespace User.IntegrationTest.Controllers.Auth
         [Fact]
         public async void Login_Ok_Test()
         {
-            var model = new { Email = "brianpl", Password = "12345" };
+            var model = new { Email = "brianpl990227@gmail.com", Password = "1234567890" };
 
             HttpContent httpContent = new StringContent(JsonConvert.SerializeObject(model), Encoding.UTF8);
             httpContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
@@ -48,7 +48,7 @@ namespace User.IntegrationTest.Controllers.Auth
         [Fact]
         public async void Login_Fail_Test()
         {
-            var model = new { Email = "brianpl", Password = "123456" };
+            var model = new { Email = "brianpl990227@gmail.com", Password = "12345678900" };
 
             HttpContent httpContent = new StringContent(JsonConvert.SerializeObject(model), Encoding.UTF8);
             httpContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
@@ -63,7 +63,7 @@ namespace User.IntegrationTest.Controllers.Auth
         [Fact]
         public async void Login_Unauthorized_Test()
         {
-            var model = new { Email = "BlockedUser", Password = "123456" };
+            var model = new { Email = "BlockedUser@gmail.com", Password = "1234567890" };
 
             HttpContent httpContent = new StringContent(JsonConvert.SerializeObject(model), Encoding.UTF8);
             httpContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");

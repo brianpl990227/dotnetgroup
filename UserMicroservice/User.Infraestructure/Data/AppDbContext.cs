@@ -14,6 +14,7 @@ namespace User.Infraestructure.Data
 
         public DbSet<AppUser> AppUsers { get; set; }
         public DbSet<FailUserLogin> FailUserLogin { get; set; }
+        public DbSet<RecoveryPassword> RecoveryPassword { get; set; }
         public AppDbContext()
         {
 

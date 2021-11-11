@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace User.Domain.Repositories.Auth
+namespace User.Infraestructure.Data.DbModels
 {
-    public class LoginMO
+    public class RecoveryPassword
     {
         public string Email { get; set; }
-        public string Password { get; set; }
+        public int RecoveryCode { get; set; }
     }
 }

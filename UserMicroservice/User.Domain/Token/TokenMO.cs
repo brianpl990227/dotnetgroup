@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace User.Infraestructure.Services.UserService
+namespace User.Domain.Token
 {
-    public interface IUserService
+    public class TokenMO
     {
-        void BlockUser(string email);
-       
+        public string Email { get; set; }
+        
     }
 }

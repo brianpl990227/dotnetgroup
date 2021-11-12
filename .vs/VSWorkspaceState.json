@@ -1,0 +1,10 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\BlogMicroservice.Application",
+    "\\BlogMicroservice.Application\\Repositories",
+    "\\BlogMicroserviceAPI"
+  ],
+  "SelectedNode": "\\BlogMicroservice.Application\\Repositories\\RepositoryAsync.cs",
+  "PreviewInSolutionExplorer": false
+}

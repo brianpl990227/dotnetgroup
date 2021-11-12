@@ -1,0 +1,31 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "02222c1c-829f-481a-9d70-0d5121acc119": {
+      "ProjectGuid": "02222c1c-829f-481a-9d70-0d5121acc119",
+      "DisplayName": "BlogMicroservice.API",
+      "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Archivos varios",
+      "ColorIndex": -1
+    },
+    "221fb341-d19c-4781-b433-57140d68bc2e": {
+      "ProjectGuid": "221fb341-d19c-4781-b433-57140d68bc2e",
+      "DisplayName": "BlogMicroservice.Application",
+      "ColorIndex": 1
+    },
+    "0722b8a6-9560-4c94-a3e4-12810435ffdf": {
+      "ProjectGuid": "0722b8a6-9560-4c94-a3e4-12810435ffdf",
+      "DisplayName": "BlogMicroservice.Domain",
+      "ColorIndex": 2
+    },
+    "3456d493-6014-48f4-ba87-b0428ac6c3a5": {
+      "ProjectGuid": "3456d493-6014-48f4-ba87-b0428ac6c3a5",
+      "DisplayName": "BlogMicroservice.Infraestruture",
+      "ColorIndex": 3
+    }
+  },
+  "NextColorIndex": 4
+}

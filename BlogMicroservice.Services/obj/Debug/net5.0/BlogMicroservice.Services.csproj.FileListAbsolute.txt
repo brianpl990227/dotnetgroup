@@ -1,0 +1,17 @@
+C:\Users\Lenovo\source\repos\BlogMicroservice\BlogMicroservice.Services\bin\Debug\net5.0\BlogMicroservice.Services.deps.json
+C:\Users\Lenovo\source\repos\BlogMicroservice\BlogMicroservice.Services\bin\Debug\net5.0\BlogMicroservice.Services.dll
+C:\Users\Lenovo\source\repos\BlogMicroservice\BlogMicroservice.Services\bin\Debug\net5.0\ref\BlogMicroservice.Services.dll
+C:\Users\Lenovo\source\repos\BlogMicroservice\BlogMicroservice.Services\bin\Debug\net5.0\BlogMicroservice.Services.pdb
+C:\Users\Lenovo\source\repos\BlogMicroservice\BlogMicroservice.Services\bin\Debug\net5.0\BlogMicroservice.Domain.dll
+C:\Users\Lenovo\source\repos\BlogMicroservice\BlogMicroservice.Services\bin\Debug\net5.0\BlogMicroservice.Infraestruture.dll
+C:\Users\Lenovo\source\repos\BlogMicroservice\BlogMicroservice.Services\bin\Debug\net5.0\BlogMicroservice.Infraestruture.pdb
+C:\Users\Lenovo\source\repos\BlogMicroservice\BlogMicroservice.Services\bin\Debug\net5.0\BlogMicroservice.Domain.pdb
+C:\Users\Lenovo\source\repos\BlogMicroservice\BlogMicroservice.Services\obj\Debug\net5.0\BlogMicroservice.Services.csproj.AssemblyReference.cache
+C:\Users\Lenovo\source\repos\BlogMicroservice\BlogMicroservice.Services\obj\Debug\net5.0\BlogMicroservice.Services.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lenovo\source\repos\BlogMicroservice\BlogMicroservice.Services\obj\Debug\net5.0\BlogMicroservice.Services.AssemblyInfoInputs.cache
+C:\Users\Lenovo\source\repos\BlogMicroservice\BlogMicroservice.Services\obj\Debug\net5.0\BlogMicroservice.Services.AssemblyInfo.cs
+C:\Users\Lenovo\source\repos\BlogMicroservice\BlogMicroservice.Services\obj\Debug\net5.0\BlogMicroservice.Services.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\source\repos\BlogMicroservice\BlogMicroservice.Services\obj\Debug\net5.0\BlogMicroservice.Services.dll
+C:\Users\Lenovo\source\repos\BlogMicroservice\BlogMicroservice.Services\obj\Debug\net5.0\ref\BlogMicroservice.Services.dll
+C:\Users\Lenovo\source\repos\BlogMicroservice\BlogMicroservice.Services\obj\Debug\net5.0\BlogMicroservice.Services.pdb
+C:\Users\Lenovo\source\repos\BlogMicroservice\BlogMicroservice.Services\obj\Debug\net5.0\BlogMicroservice.Services.csproj.CopyComplete

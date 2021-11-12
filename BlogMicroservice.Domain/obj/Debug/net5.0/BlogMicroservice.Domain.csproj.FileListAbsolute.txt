@@ -1,0 +1,12 @@
+C:\Users\Lenovo\source\repos\BlogMicroservice\BlogMicroservice.Domain\bin\Debug\net5.0\BlogMicroservice.Domain.deps.json
+C:\Users\Lenovo\source\repos\BlogMicroservice\BlogMicroservice.Domain\bin\Debug\net5.0\BlogMicroservice.Domain.dll
+C:\Users\Lenovo\source\repos\BlogMicroservice\BlogMicroservice.Domain\bin\Debug\net5.0\ref\BlogMicroservice.Domain.dll
+C:\Users\Lenovo\source\repos\BlogMicroservice\BlogMicroservice.Domain\bin\Debug\net5.0\BlogMicroservice.Domain.pdb
+C:\Users\Lenovo\source\repos\BlogMicroservice\BlogMicroservice.Domain\obj\Debug\net5.0\BlogMicroservice.Domain.csproj.AssemblyReference.cache
+C:\Users\Lenovo\source\repos\BlogMicroservice\BlogMicroservice.Domain\obj\Debug\net5.0\BlogMicroservice.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lenovo\source\repos\BlogMicroservice\BlogMicroservice.Domain\obj\Debug\net5.0\BlogMicroservice.Domain.AssemblyInfoInputs.cache
+C:\Users\Lenovo\source\repos\BlogMicroservice\BlogMicroservice.Domain\obj\Debug\net5.0\BlogMicroservice.Domain.AssemblyInfo.cs
+C:\Users\Lenovo\source\repos\BlogMicroservice\BlogMicroservice.Domain\obj\Debug\net5.0\BlogMicroservice.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\source\repos\BlogMicroservice\BlogMicroservice.Domain\obj\Debug\net5.0\BlogMicroservice.Domain.dll
+C:\Users\Lenovo\source\repos\BlogMicroservice\BlogMicroservice.Domain\obj\Debug\net5.0\ref\BlogMicroservice.Domain.dll
+C:\Users\Lenovo\source\repos\BlogMicroservice\BlogMicroservice.Domain\obj\Debug\net5.0\BlogMicroservice.Domain.pdb

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ECx4/qzA5SFmG7iermO9NXz+tLXSyE1bD9Bg0zWVc1B1inqxi/VP/GBEB/qFU4pacGfe7ihtZVgwz3a8BQOzWg==",
+  "dgSpecHash": "UaFBfQSH3W4lQ4K6GX4NJZAR7zywvBJs8xM0P6GpEfT+rTTiZ/LP1M5mjfb1SW2EJVbv2VMUV02gWWlNNJD15g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Lenovo\\source\\repos\\BlogMicroservice\\BlogMicroservice.Infraestruture\\BlogMicroservice.Infraestruture.csproj",
+  "projectFilePath": "C:\\Users\\Lenovo\\source\\repos\\BlogMicroservice\\BlogMicroservice.Infraestruture\\BlogMicroservice.DataAccess.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Lenovo\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",

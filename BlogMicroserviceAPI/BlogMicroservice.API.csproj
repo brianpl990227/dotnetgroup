@@ -20,7 +20,7 @@
   <ItemGroup>
     <ProjectReference Include="..\BlogMicroservice.Application\BlogMicroservice.Application.csproj" />
     <ProjectReference Include="..\BlogMicroservice.Domain\BlogMicroservice.Domain.csproj" />
-    <ProjectReference Include="..\BlogMicroservice.Infraestruture\BlogMicroservice.Infraestruture.csproj" />
+    <ProjectReference Include="..\BlogMicroservice.Infraestruture\BlogMicroservice.DataAccess.csproj" />
     <ProjectReference Include="..\BlogMicroservice.Services\BlogMicroservice.Services.csproj" />
   </ItemGroup>
 

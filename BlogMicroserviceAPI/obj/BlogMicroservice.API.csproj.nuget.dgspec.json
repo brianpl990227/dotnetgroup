@@ -32,8 +32,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Lenovo\\source\\repos\\BlogMicroservice\\BlogMicroservice.Infraestruture\\BlogMicroservice.Infraestruture.csproj": {
-                "projectPath": "C:\\Users\\Lenovo\\source\\repos\\BlogMicroservice\\BlogMicroservice.Infraestruture\\BlogMicroservice.Infraestruture.csproj"
+              "C:\\Users\\Lenovo\\source\\repos\\BlogMicroservice\\BlogMicroservice.Infraestruture\\BlogMicroservice.DataAccess.csproj": {
+                "projectPath": "C:\\Users\\Lenovo\\source\\repos\\BlogMicroservice\\BlogMicroservice.Infraestruture\\BlogMicroservice.DataAccess.csproj"
               }
             }
           }
@@ -144,12 +144,12 @@
         }
       }
     },
-    "C:\\Users\\Lenovo\\source\\repos\\BlogMicroservice\\BlogMicroservice.Infraestruture\\BlogMicroservice.Infraestruture.csproj": {
+    "C:\\Users\\Lenovo\\source\\repos\\BlogMicroservice\\BlogMicroservice.Infraestruture\\BlogMicroservice.DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Lenovo\\source\\repos\\BlogMicroservice\\BlogMicroservice.Infraestruture\\BlogMicroservice.Infraestruture.csproj",
-        "projectName": "BlogMicroservice.Infraestruture",
-        "projectPath": "C:\\Users\\Lenovo\\source\\repos\\BlogMicroservice\\BlogMicroservice.Infraestruture\\BlogMicroservice.Infraestruture.csproj",
+        "projectUniqueName": "C:\\Users\\Lenovo\\source\\repos\\BlogMicroservice\\BlogMicroservice.Infraestruture\\BlogMicroservice.DataAccess.csproj",
+        "projectName": "BlogMicroservice.DataAccess",
+        "projectPath": "C:\\Users\\Lenovo\\source\\repos\\BlogMicroservice\\BlogMicroservice.Infraestruture\\BlogMicroservice.DataAccess.csproj",
         "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Lenovo\\source\\repos\\BlogMicroservice\\BlogMicroservice.Infraestruture\\obj\\",
         "projectStyle": "PackageReference",
@@ -254,8 +254,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Lenovo\\source\\repos\\BlogMicroservice\\BlogMicroservice.Infraestruture\\BlogMicroservice.Infraestruture.csproj": {
-                "projectPath": "C:\\Users\\Lenovo\\source\\repos\\BlogMicroservice\\BlogMicroservice.Infraestruture\\BlogMicroservice.Infraestruture.csproj"
+              "C:\\Users\\Lenovo\\source\\repos\\BlogMicroservice\\BlogMicroservice.Infraestruture\\BlogMicroservice.DataAccess.csproj": {
+                "projectPath": "C:\\Users\\Lenovo\\source\\repos\\BlogMicroservice\\BlogMicroservice.Infraestruture\\BlogMicroservice.DataAccess.csproj"
               }
             }
           }
@@ -332,8 +332,8 @@
               "C:\\Users\\Lenovo\\source\\repos\\BlogMicroservice\\BlogMicroservice.Domain\\BlogMicroservice.Domain.csproj": {
                 "projectPath": "C:\\Users\\Lenovo\\source\\repos\\BlogMicroservice\\BlogMicroservice.Domain\\BlogMicroservice.Domain.csproj"
               },
-              "C:\\Users\\Lenovo\\source\\repos\\BlogMicroservice\\BlogMicroservice.Infraestruture\\BlogMicroservice.Infraestruture.csproj": {
-                "projectPath": "C:\\Users\\Lenovo\\source\\repos\\BlogMicroservice\\BlogMicroservice.Infraestruture\\BlogMicroservice.Infraestruture.csproj"
+              "C:\\Users\\Lenovo\\source\\repos\\BlogMicroservice\\BlogMicroservice.Infraestruture\\BlogMicroservice.DataAccess.csproj": {
+                "projectPath": "C:\\Users\\Lenovo\\source\\repos\\BlogMicroservice\\BlogMicroservice.Infraestruture\\BlogMicroservice.DataAccess.csproj"
               },
               "C:\\Users\\Lenovo\\source\\repos\\BlogMicroservice\\BlogMicroservice.Services\\BlogMicroservice.Services.csproj": {
                 "projectPath": "C:\\Users\\Lenovo\\source\\repos\\BlogMicroservice\\BlogMicroservice.Services\\BlogMicroservice.Services.csproj"

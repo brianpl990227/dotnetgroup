@@ -2156,13 +2156,29 @@
         "dependencies": {
           "AutoMapper": "10.1.1",
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "8.1.1",
-          "BlogMicroservice.Infraestruture": "1.0.0"
+          "BlogMicroservice.DataAccess": "1.0.0"
         },
         "compile": {
           "bin/placeholder/BlogMicroservice.Application.dll": {}
         },
         "runtime": {
           "bin/placeholder/BlogMicroservice.Application.dll": {}
+        }
+      },
+      "BlogMicroservice.DataAccess/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "BlogMicroservice.Domain": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "5.0.10",
+          "Microsoft.EntityFrameworkCore.Relational": "5.0.10",
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.10"
+        },
+        "compile": {
+          "bin/placeholder/BlogMicroservice.DataAccess.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BlogMicroservice.DataAccess.dll": {}
         }
       },
       "BlogMicroservice.Domain/1.0.0": {
@@ -2179,27 +2195,11 @@
           "bin/placeholder/BlogMicroservice.Domain.dll": {}
         }
       },
-      "BlogMicroservice.Infraestruture/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
-        "dependencies": {
-          "BlogMicroservice.Domain": "1.0.0",
-          "Microsoft.EntityFrameworkCore": "5.0.10",
-          "Microsoft.EntityFrameworkCore.Relational": "5.0.10",
-          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.10"
-        },
-        "compile": {
-          "bin/placeholder/BlogMicroservice.Infraestruture.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/BlogMicroservice.Infraestruture.dll": {}
-        }
-      },
       "BlogMicroservice.Services/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
-          "BlogMicroservice.Infraestruture": "1.0.0",
+          "BlogMicroservice.DataAccess": "1.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.10",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0"
         },
@@ -7555,15 +7555,15 @@
       "path": "../BlogMicroservice.Application/BlogMicroservice.Application.csproj",
       "msbuildProject": "../BlogMicroservice.Application/BlogMicroservice.Application.csproj"
     },
+    "BlogMicroservice.DataAccess/1.0.0": {
+      "type": "project",
+      "path": "../BlogMicroservice.Infraestruture/BlogMicroservice.DataAccess.csproj",
+      "msbuildProject": "../BlogMicroservice.Infraestruture/BlogMicroservice.DataAccess.csproj"
+    },
     "BlogMicroservice.Domain/1.0.0": {
       "type": "project",
       "path": "../BlogMicroservice.Domain/BlogMicroservice.Domain.csproj",
       "msbuildProject": "../BlogMicroservice.Domain/BlogMicroservice.Domain.csproj"
-    },
-    "BlogMicroservice.Infraestruture/1.0.0": {
-      "type": "project",
-      "path": "../BlogMicroservice.Infraestruture/BlogMicroservice.Infraestruture.csproj",
-      "msbuildProject": "../BlogMicroservice.Infraestruture/BlogMicroservice.Infraestruture.csproj"
     },
     "BlogMicroservice.Services/1.0.0": {
       "type": "project",
@@ -7576,8 +7576,8 @@
       "AutoMapper >= 10.1.1",
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 8.1.1",
       "BlogMicroservice.Application >= 1.0.0",
+      "BlogMicroservice.DataAccess >= 1.0.0",
       "BlogMicroservice.Domain >= 1.0.0",
-      "BlogMicroservice.Infraestruture >= 1.0.0",
       "BlogMicroservice.Services >= 1.0.0",
       "Microsoft.AspNetCore.Mvc.NewtonsoftJson >= 5.0.10",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.11",
@@ -7624,8 +7624,8 @@
             "C:\\Users\\Lenovo\\source\\repos\\BlogMicroservice\\BlogMicroservice.Domain\\BlogMicroservice.Domain.csproj": {
               "projectPath": "C:\\Users\\Lenovo\\source\\repos\\BlogMicroservice\\BlogMicroservice.Domain\\BlogMicroservice.Domain.csproj"
             },
-            "C:\\Users\\Lenovo\\source\\repos\\BlogMicroservice\\BlogMicroservice.Infraestruture\\BlogMicroservice.Infraestruture.csproj": {
-              "projectPath": "C:\\Users\\Lenovo\\source\\repos\\BlogMicroservice\\BlogMicroservice.Infraestruture\\BlogMicroservice.Infraestruture.csproj"
+            "C:\\Users\\Lenovo\\source\\repos\\BlogMicroservice\\BlogMicroservice.Infraestruture\\BlogMicroservice.DataAccess.csproj": {
+              "projectPath": "C:\\Users\\Lenovo\\source\\repos\\BlogMicroservice\\BlogMicroservice.Infraestruture\\BlogMicroservice.DataAccess.csproj"
             },
             "C:\\Users\\Lenovo\\source\\repos\\BlogMicroservice\\BlogMicroservice.Services\\BlogMicroservice.Services.csproj": {
               "projectPath": "C:\\Users\\Lenovo\\source\\repos\\BlogMicroservice\\BlogMicroservice.Services\\BlogMicroservice.Services.csproj"

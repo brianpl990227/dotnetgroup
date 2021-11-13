@@ -23,9 +23,14 @@
     },
     "3456d493-6014-48f4-ba87-b0428ac6c3a5": {
       "ProjectGuid": "3456d493-6014-48f4-ba87-b0428ac6c3a5",
-      "DisplayName": "BlogMicroservice.Infraestruture",
+      "DisplayName": "BlogMicroservice.DataAccess",
       "ColorIndex": 3
+    },
+    "bc153f71-a9ba-4f9e-9bf0-ff40bb07aecb": {
+      "ProjectGuid": "bc153f71-a9ba-4f9e-9bf0-ff40bb07aecb",
+      "DisplayName": "BlogMicroservice.Services",
+      "ColorIndex": 4
     }
   },
-  "NextColorIndex": 4
+  "NextColorIndex": 5
 }

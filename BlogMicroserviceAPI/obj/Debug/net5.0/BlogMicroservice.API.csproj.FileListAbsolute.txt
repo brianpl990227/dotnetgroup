@@ -59,10 +59,8 @@ C:\Users\Lenovo\source\repos\BlogMicroservice\BlogMicroserviceAPI\bin\Debug\net5
 C:\Users\Lenovo\source\repos\BlogMicroservice\BlogMicroserviceAPI\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\Users\Lenovo\source\repos\BlogMicroservice\BlogMicroserviceAPI\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Lenovo\source\repos\BlogMicroservice\BlogMicroserviceAPI\bin\Debug\net5.0\BlogMicroservice.Domain.dll
-C:\Users\Lenovo\source\repos\BlogMicroservice\BlogMicroserviceAPI\bin\Debug\net5.0\BlogMicroservice.Infraestruture.dll
 C:\Users\Lenovo\source\repos\BlogMicroservice\BlogMicroserviceAPI\bin\Debug\net5.0\BlogMicroservice.Services.dll
 C:\Users\Lenovo\source\repos\BlogMicroservice\BlogMicroserviceAPI\bin\Debug\net5.0\BlogMicroservice.Domain.pdb
-C:\Users\Lenovo\source\repos\BlogMicroservice\BlogMicroserviceAPI\bin\Debug\net5.0\BlogMicroservice.Infraestruture.pdb
 C:\Users\Lenovo\source\repos\BlogMicroservice\BlogMicroserviceAPI\bin\Debug\net5.0\BlogMicroservice.Services.pdb
 C:\Users\Lenovo\source\repos\BlogMicroservice\BlogMicroserviceAPI\bin\Debug\net5.0\Microsoft.AspNetCore.Razor.Language.dll
 C:\Users\Lenovo\source\repos\BlogMicroservice\BlogMicroserviceAPI\bin\Debug\net5.0\Microsoft.Bcl.AsyncInterfaces.dll
@@ -146,3 +144,7 @@ C:\Users\Lenovo\source\repos\BlogMicroservice\BlogMicroserviceAPI\bin\Debug\net5
 C:\Users\Lenovo\source\repos\BlogMicroservice\BlogMicroserviceAPI\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
 C:\Users\Lenovo\source\repos\BlogMicroservice\BlogMicroserviceAPI\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Users\Lenovo\source\repos\BlogMicroservice\BlogMicroserviceAPI\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
+C:\Users\Lenovo\source\repos\BlogMicroservice\BlogMicroserviceAPI\bin\Debug\net5.0\BlogMicroservice.DataAccess.dll
+C:\Users\Lenovo\source\repos\BlogMicroservice\BlogMicroserviceAPI\bin\Debug\net5.0\BlogMicroservice.DataAccess.pdb
+C:\Users\Lenovo\source\repos\BlogMicroservice\BlogMicroserviceAPI\bin\Debug\net5.0\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\Lenovo\source\repos\BlogMicroservice\BlogMicroserviceAPI\bin\Debug\net5.0\Microsoft.Extensions.DependencyModel.dll

@@ -19,8 +19,6 @@ namespace BlogMicroservice.API.Controllers
             Herramientas para trabajar:
             WorkUnity - Por implementar.
          */
-
-        private readonly ApplicationDbContext _context;
         private readonly IWorkUnity _workUnity;
         private readonly IMapper _mapper;
         protected ResponseDto _response;
@@ -29,30 +27,37 @@ namespace BlogMicroservice.API.Controllers
                                              IWorkUnity workUnity,
                                              IMapper mapper)
         {
-            _context = context;
             _workUnity = workUnity;
             _mapper = mapper;
             _response = new ResponseDto();
-        } 
-
-        
-        //Get: api/blogpromo/5
-        [HttpGet("{id}")] //Por medio de WorkUnity
-        public async Task<BlogPromoDto> GetPromoById(int id)
-        {
-            //Include por medio de EF para listar los comentarios y estrellas
-            await _context.BlogPromo.Include(x => x.PromoRatings).ToListAsync();
-            var blogPromo = await _workUnity.BlogPromo.GetT(id);
-            return _mapper.Map<BlogPromoDto>(blogPromo);
         }
 
-        
+
+        //Get: api/blogpromo/5
+        [HttpGet("{id}")] //Por medio de WorkUnity
+        public async Task<ActionResult<BlogPromoModel>> GetPromoById(int id)
+        {
+            try
+            {
+                 var blogPromo = await _workUnity.BlogPromo.GetBlogPromo(id);
+                 _response.Result = blogPromo;
+                 _response.DisplayMessage = "Listado de comentarios";
+            }
+            catch (Exception ex)
+            {
+                _response.IsSuccess = false;
+                _response.ErrorMessage = new List<string> { ex.ToString() };
+                
+            }
+            return Ok(_response); 
+        }
+
         [HttpGet]//Get: api/blogpromo - por medio de WorkUnity 
         public async Task<ActionResult<IEnumerable<BlogPromoDto>>> GetPromosList()
         {
             try
             {
-                var blogList = await _workUnity.BlogPromo.GetTAll(includeproperties: "PromoRatings");
+                var blogList = await _workUnity.BlogPromo.GetTAll();
                 _response.Result = blogList;
                 _response.DisplayMessage = "Blog List";
             }
@@ -86,28 +91,14 @@ namespace BlogMicroservice.API.Controllers
         }
 
 
-        [HttpDelete]//Por medio de workUnity + Find del AppDbContext
+        [HttpDelete]//Por medio de workUnity 
         public async Task<bool> DeletePromo(int id)
         {
-            try
+            if (BlogpromoExists(id))
             {
-                BlogPromoModel blogPromo = await _context.BlogPromo.FindAsync(id);
-                if (blogPromo!=null)
-                {
-                    await _workUnity.BlogPromo.RemoveT(blogPromo);
-                    _workUnity.SaveData();
-                }
-                else
-                {
-                    return false;
-                }
-                
-            }
-            catch (Exception)
-            {
-
-                return false;
-            }
+                await _workUnity.BlogPromo.RemoveT(id);
+                _workUnity.SaveData();
+            }      
             return true;            
         }
 

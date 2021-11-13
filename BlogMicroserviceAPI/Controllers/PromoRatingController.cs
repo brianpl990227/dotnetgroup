@@ -42,12 +42,12 @@ namespace BlogMicroservice.API.Controllers
 
 
         [HttpPost]//Por medio de la unidad de trabajo
-        public async Task<PostPutPromoRatingDto> AddRating(PostPutPromoRatingDto promoRatingDto)
+        public async Task<GetPromoRatingDto> AddRating(int id, GetPromoRatingDto promoRatingDto)
         {
-            var promoRating = _mapper.Map<PostPutPromoRatingDto, PromoRatingModel>(promoRatingDto);
+            var promoRating = _mapper.Map<GetPromoRatingDto, PromoRatingModel>(promoRatingDto);
             await _workUnity.PromoRating.AddT(promoRating);
             _workUnity.SaveData();
-            return _mapper.Map<PromoRatingModel, PostPutPromoRatingDto>(promoRating);
+            return _mapper.Map<PromoRatingModel, GetPromoRatingDto>(promoRating);
         }
 
 

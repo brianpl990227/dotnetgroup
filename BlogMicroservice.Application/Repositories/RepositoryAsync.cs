@@ -29,7 +29,7 @@ namespace BlogMicroservice.Application.Repositories
 
         public async Task<T> GetT(int id, string includeproperties = null)
         {
-            return await _dbSet.FindAsync(id);
+           return await _dbSet.FindAsync(id);  
         }
 
         public async Task<IEnumerable<T>> GetTAll(System.Linq.Expressions.Expression<Func<T, bool>> filter = null, 

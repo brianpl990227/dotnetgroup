@@ -1,6 +1,8 @@
 ﻿using BlogMicroservice.Application.Repositories.IRepositories;
 using BlogMicroservice.Domain.Models;
 using BlogMicroservice.Infraestruture;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -17,6 +19,14 @@ namespace BlogMicroservice.Application.Repositories
         {
             _context = context;
         }
+
+        //Metodo para encontrar BlogPromoById con los promoratings incluidos
+        public async Task<ActionResult<BlogPromoModel>> GetBlogPromo(int id)
+        {
+            var blogPromo = await _context.BlogPromo.Include(x => x.PromoRatings).FirstOrDefaultAsync(x=>x.Id == id);
+            return blogPromo;
+        }
+
         public async Task Update(BlogPromoModel blogPromo)
         {
             //var = al BlogPromo recibido por parametro

@@ -11,7 +11,7 @@ C:\Users\Lenovo\source\repos\BlogMicroservice\BlogMicroservice.Application\obj\D
 C:\Users\Lenovo\source\repos\BlogMicroservice\BlogMicroservice.Application\obj\Debug\net5.0\ref\BlogMicroservice.Application.dll
 C:\Users\Lenovo\source\repos\BlogMicroservice\BlogMicroservice.Application\obj\Debug\net5.0\BlogMicroservice.Application.pdb
 C:\Users\Lenovo\source\repos\BlogMicroservice\BlogMicroservice.Application\bin\Debug\net5.0\BlogMicroservice.Domain.dll
-C:\Users\Lenovo\source\repos\BlogMicroservice\BlogMicroservice.Application\bin\Debug\net5.0\BlogMicroservice.Infraestruture.dll
-C:\Users\Lenovo\source\repos\BlogMicroservice\BlogMicroservice.Application\bin\Debug\net5.0\BlogMicroservice.Infraestruture.pdb
 C:\Users\Lenovo\source\repos\BlogMicroservice\BlogMicroservice.Application\bin\Debug\net5.0\BlogMicroservice.Domain.pdb
 C:\Users\Lenovo\source\repos\BlogMicroservice\BlogMicroservice.Application\obj\Debug\net5.0\BlogMicroservice.Application.csproj.CopyComplete
+C:\Users\Lenovo\source\repos\BlogMicroservice\BlogMicroservice.Application\bin\Debug\net5.0\BlogMicroservice.DataAccess.dll
+C:\Users\Lenovo\source\repos\BlogMicroservice\BlogMicroservice.Application\bin\Debug\net5.0\BlogMicroservice.DataAccess.pdb

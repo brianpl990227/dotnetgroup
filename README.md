@@ -31,7 +31,7 @@ Dentro de los microservicios detectados están
 
 ### Metodología de desarrollo ⚙️
 ---
-Escoger la metodología de trabajo es uno de los pasos más importantes en la etapa inicial de desarrollo. Nosotros escogimos SCRUM, el cual acompañamos con tarjetas de historias de usuario, para elaborar estas historias de usuario y hacer un tablero de SCRUM usamos la herramienta https://miro.com, SRUM provee de una alta flexibilidad a los cambios que se puedan presentar.
+Escoger la metodología de trabajo es uno de los pasos más importantes en la etapa inicial de desarrollo. Nosotros escogimos SCRUM, el cual acompañamos con tarjetas de historias de usuario, para elaborar estas historias de usuario y hacer un tablero de SCRUM usamos la herramienta https://miro.com, SCRUM provee de una alta flexibilidad a los cambios que se puedan presentar.
 
 ### Construido con 🛠️
 ---

@@ -1,4 +1,4 @@
-## Iniciativa de Dotnetgroup 😁
+## Iniciativa de Desarrolladores .Net 😁
 Proyecto para aprender :)
 
 Este proyecto se hace con el fin de especializarnos

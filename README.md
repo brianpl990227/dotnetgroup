@@ -8,7 +8,7 @@ del equipo y conocer todas las partes del proceso
 de desarrollo de software únete a nuestro grupo de
 Telegram
 
-https://t.me/dotnetdevspanish
+https://t.me/DotNetDesarrolladoresGrupo
 
 ### Objetivo del proyecto 📌
 ---
